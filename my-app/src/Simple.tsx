@@ -14,6 +14,7 @@ export function Simple(){
     const[leftAxis,setleftAxis]=useState<string>("");
     const[rightNearAdd,setrightNearAdd]=useState<string>("");
     const[leftNearAdd,setleftNearAdd]=useState<string>("");
+    const[pupilpre,setpupilpre]=useState<string>("")
     const[extrainfo,setextrainfo]=useState<string>("");
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -27,6 +28,7 @@ export function Simple(){
        console.log('leftAxis:',leftAxis)
        console.log('RightNeadAdd:',rightNearAdd)
        console.log('LeftNearAdd:',leftNearAdd)
+       console.log('pupilpre:',pupilpre)
        console.log('ExtraInfo:',extrainfo)
     };
 
@@ -57,6 +59,9 @@ export function Simple(){
     const onLeftAxisChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
         setleftAxis(event.target.value);
     };
+    const onPupilPreChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+        setpupilpre(event.target.value);
+    };
     const onExtraInfoChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
         setextrainfo(event.target.value);
     };
@@ -64,7 +69,7 @@ export function Simple(){
 
    const option =require("./data.json")
   const nearAdd = require("./NearAddData.json")
-      
+      const Pupilpre = require("./PupilPreData.json")
     return(
         
         <div className="container">
@@ -195,6 +200,30 @@ export function Simple(){
              </select>
                 </div>
              </div>
+             <hr></hr>
+            
+            <p >For prescriptions with a Sphere value stronger than +/- 8, we may still be able to supply your glasses. Please call us on 01793 746601 to discuss your options.</p>
+           <hr></hr>
+
+           
+           <div className="row">
+                <div className="col">
+                <label className="name">Pupil Prescription</label>
+                </div>
+                <div className="col"></div>
+                <div className="col">
+                <select onChange={onPupilPreChange}>
+              {Pupilpre.value.map((item: { id: React.Key | null | undefined; name: {} | null | undefined; }) => (
+                  <option key={item.id} >
+                       {item.name} 
+                  </option>
+              ))}
+             </select>
+                </div>
+             </div>
+             <div>
+                    <span >The distance between your pupils, select "Average / Don't Know" if you are unsure and we'll be in touch if necessary<p>For prescriptions with a Sphere value stronger than +/- 8, we may still be able to supply your glasses. Please  call us on 01793 746601 to discuss your options.</p></span>
+                </div>
              <hr></hr>
 
              <div className="row">
