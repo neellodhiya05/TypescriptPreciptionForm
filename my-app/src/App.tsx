@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import { NavLink } from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
+import {Simple} from "./Simple";
+import { Advanced } from './Advanced';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+    <div className="row">
+      <div className="col">
+      <NavLink  exact activeClassName="active_class" to="/" >Simple Form</NavLink>
+      </div>
+      <div className="col">
+      
+      </div>
+      <div className="col">
+        
+      </div>
+      <div className="col">
+      <NavLink   exact activeClassName="active_class" to="/advanced" >Advanced Form</NavLink>
+      </div>
     </div>
+    <Switch>
+        <Route  exact path= "/" component={Simple}/>
+        <Route path="/advanced" component={Advanced} />
+      </Switch>
+  </div>
   );
 }
 
 export default App;
+
