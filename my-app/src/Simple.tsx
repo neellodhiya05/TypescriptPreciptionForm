@@ -71,7 +71,7 @@ export function Simple(){
   const nearAdd = require("./NearAddData.json")
       const Pupilpre = require("./PupilPreData.json")
     return(
-        
+       //heading
         <div className="container">
         <div className="row">
           <div className="cols">
@@ -83,19 +83,19 @@ export function Simple(){
             </p>
 
             <form onSubmit={handleSubmit}>
-            
+           {/*name input field*/}
             <label className="name" > Prescription Name:</label>
                 <input  id="name" type="text" name="userId"  value={name} onChange={onNameChange} required ></input>
             <hr></hr>
                 
-            
+            {/* right and left eye heading*/}
             <div className="row">
                 <div className="col" style={{fontSize:20}}>Right Eye</div>
                 <div className="col">  </div>
                 <div className="col" style={{fontSize:20}}>Left Eye</div>
              </div>
 
-
+             {/* right and left eye sphere*/}
             <hr></hr>
             <div className="row">
                 <div className="col" style={{ fontSize: " calc(1em + 1vw)" }}>Sphere(SPH)</div>
@@ -125,7 +125,7 @@ export function Simple(){
                 </div>
              </div>
              <hr></hr>
-
+                 {/* right and left eye cylinder*/}
              <div className="row">
                 <div className="col" style={{ fontSize: " calc(1em + 1vw)" }}>Cylinder(CYL)</div>
                 <div className="col">  </div>
@@ -154,7 +154,8 @@ export function Simple(){
                 </div>
              </div>
              <hr></hr>
-
+                {/* right and left eye axis*/}
+            
              <div className="row">
                 <div className="col" style={{ fontSize: " calc(1em + 1vw)" }}>Axis</div>
                 <div className="col">  </div>
@@ -172,7 +173,7 @@ export function Simple(){
              </div>
                 <hr></hr>
 
-
+                {/* right and left eye Near addition*/}
                 <div className="row">
                 <div className="col" style={{ fontSize: " calc(1em + 1vw)" }}>Near Add</div>
                 <div className="col">  </div>
@@ -205,7 +206,7 @@ export function Simple(){
             <p >For prescriptions with a Sphere value stronger than +/- 8, we may still be able to supply your glasses. Please call us on 01793 746601 to discuss your options.</p>
            <hr></hr>
 
-           
+           {/* Pupil prescription*/}
            <div className="row">
                 <div className="col">
                 <label className="name">Pupil Prescription</label>
@@ -225,7 +226,7 @@ export function Simple(){
                     <span >The distance between your pupils, select "Average / Don't Know" if you are unsure and we'll be in touch if necessary<p>For prescriptions with a Sphere value stronger than +/- 8, we may still be able to supply your glasses. Please  call us on 01793 746601 to discuss your options.</p></span>
                 </div>
              <hr></hr>
-
+                {/*Extra information*/}
              <div className="row">
                 <div className="col">
                 <label className="name">Extra Information:</label>
@@ -237,11 +238,13 @@ export function Simple(){
              </div>
              
            <hr></hr>
-
+                {/*Checkbox*/}
             <input type="checkbox" required />
             <label >
                 I confirm that I've read and agree to the Terms and Conditions I certify that the wearer is over 16 years old and that they are not registered blind or partially sighted. I also confirm that the prescription details above have been entered correctly and I am happy that no errors have been made.
-            </label>     
+            </label>    
+            <hr></hr> 
+            {/* Sumbit button*/}
             <div className="heading" >
                  <button className="btn-btn sucess" type="submit">Add Prescription</button>
             </div>
