@@ -81,7 +81,7 @@ export function Simple(){
                 All prescriptions will be checked by one of our opticians and verified for any potential errors or delays,
                 and they may contact you if they need to discuss your details any further.
             </p>
-
+ 
             <form onSubmit={handleSubmit}>
            {/*name input field*/}
             <label className="name" > Prescription Name:</label>
